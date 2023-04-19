@@ -62,7 +62,7 @@ let x;
 x=25
 x=5
 console.log("x is", x);
-
+//class concept 
 class Student{
   name!: string;
   constructor(studentName: string){
@@ -75,5 +75,20 @@ class Student{
 }
 const s1 = new Student('Adam')
 console.log(s1.name);
-
 s1.welcome()
+
+//class inheritence typescrit
+class Teacher extends Student{
+  
+  constructor(teacherName: string){
+    super(teacherName)
+  }
+  assignTask(){
+    console.log('Task Assigned')
+  }
+}
+const t1=new Teacher('Ahmed')
+
+console.log(t1.name)
+t1.welcome()
+t1.assignTask()
