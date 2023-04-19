@@ -64,7 +64,7 @@ x=5
 console.log("x is", x);
 //class concept 
 class Student{
-  name!: string;
+  name: string;
   constructor(studentName: string){
     this.name = studentName
   }
@@ -77,7 +77,7 @@ const s1 = new Student('Adam')
 console.log(s1.name);
 s1.welcome()
 
-//class inheritence typescrit
+//class inheritence typescrit -------------------------
 class Teacher extends Student{
   
   constructor(teacherName: string){
@@ -92,3 +92,7 @@ const t1=new Teacher('Ahmed')
 console.log(t1.name)
 t1.welcome()
 t1.assignTask()
+/// Access Modifiers  : public , private , protected
+// Public : Les membres déclarés public peuvent être accessibles à partir de n'importe quelle classe dans le programme. Cela signifie que les membres publics peuvent être utilisés sans restriction. 
+// Private : Les membres déclarés private sont accessibles uniquement à partir de la classe où ils sont définis. Cela signifie que les membres private ne peuvent pas être utilisés à l'extérieur de la classe où ils sont définis.
+//Protected : Les membres déclarés protected sont accessibles à partir de la classe où ils sont définis et à partir des sous-classes qui en héritent. Cela signifie que les membres protected peuvent être utilisés dans la classe où ils sont définis et dans toutes les sous-classes qui héritent de cette classe.
