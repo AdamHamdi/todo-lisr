@@ -96,3 +96,28 @@ t1.assignTask()
 // Public : Les membres déclarés public peuvent être accessibles à partir de n'importe quelle classe dans le programme. Cela signifie que les membres publics peuvent être utilisés sans restriction. 
 // Private : Les membres déclarés private sont accessibles uniquement à partir de la classe où ils sont définis. Cela signifie que les membres private ne peuvent pas être utilisés à l'extérieur de la classe où ils sont définis.
 //Protected : Les membres déclarés protected sont accessibles à partir de la classe où ils sont définis et à partir des sous-classes qui en héritent. Cela signifie que les membres protected peuvent être utilisés dans la classe où ils sont définis et dans toutes les sous-classes qui héritent de cette classe.
+
+//// Arrow function
+let getReturnValueNormal = function(){
+return 100
+}
+let getReturnValueArrow = (x: number)=> 100 * x;
+console.log(   getReturnValueArrow(5))
+console.log( "The type of the getReturnValueArrow is a",typeof getReturnValueArrow);
+
+// loops  on 4 type de loops
+// 1 - For      loop
+// 2 - For-In   loop
+// 3 - For-Of   loop
+// 4 - For-Each loop
+ 
+function tableau() {
+  let array1: number[] = [1,2,3,4,5];
+   for(let index =0 ; index < array1.length; index++){
+    console.log( `l'élement ${index} de l'index est`,  array1[index]);
+   }
+
+
+}
+
+tableau()
