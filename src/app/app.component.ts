@@ -135,7 +135,7 @@ function forOf() {
    }
 }
 forOf()
-// 4 - For-Each loop
+// 4 - For-Each loop ====> the most usefull loop
 function forEach() {
   let array1: number[] = [1,2,3,4,5];
   let array2: string[] = ['Z','B','C','D','E'];
@@ -145,4 +145,23 @@ function forEach() {
    })
 }
 forEach()
+
+//Operators
+
+//Arithmetic operators
+function arithmeticOperator(){
+  let x = 100;
+  let y = 150;
+  let z = x+y;
+  console.log(`the value of z est ${z}`)
+   let w = z - y;
+   console.log(`the value of w est ${w}`)
+}
+arithmeticOperator()
+
+//Assignment operators
+//Relational operators
+//Logical operators
+//Ternary operators
+//Type Operators
 
