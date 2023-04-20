@@ -107,17 +107,42 @@ console.log( "The type of the getReturnValueArrow is a",typeof getReturnValueArr
 
 // loops  on 4 type de loops
 // 1 - For      loop
-// 2 - For-In   loop
-// 3 - For-Of   loop
-// 4 - For-Each loop
- 
-function tableau() {
+
+function forLoop() {
   let array1: number[] = [1,2,3,4,5];
    for(let index =0 ; index < array1.length; index++){
-    console.log( `l'élement ${index} de l'index est`,  array1[index]);
+    console.log( `l'élement de l'index ${index}  est`,  array1[index]);
    }
-
-
 }
+forLoop()
+// 2 - For-In   loop
+function forIn() {
+  let array1: number[] = [1,2,3,4,5];
+  let array2: string[] = ['a','B','C','D','E'];
+  let x = 10
+   for(let key in array2){
+    console.log( `l'élement de l'index ${key}  est`,  array2[key]);
+   }
+}
+forIn()
+// 3 - For-Of   loop
+function forOf() {
+  let array1: number[] = [1,2,3,4,5];
+  let array2: string[] = ['a','B','C','D','E'];
+  let x = 10
+   for(let value of array2){
+    console.log( `l'élement de l'index ${value}  est ${value}`   );
+   }
+}
+forOf()
+// 4 - For-Each loop
+function forEach() {
+  let array1: number[] = [1,2,3,4,5];
+  let array2: string[] = ['Z','B','C','D','E'];
+  let x = 10
+  array1.forEach(element =>{
+    console.log( `l'élement de l'index ${element} est ${array1[element]}`   );
+   })
+}
+forEach()
 
-tableau()
