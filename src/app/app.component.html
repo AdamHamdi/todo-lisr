@@ -1,7 +1,8 @@
  <div class="container">
   <div class="row m-0 w-100">
+    <button class="btn btn-success" (click)="toggleLight()">light</button>
     <div class="col-6 mx-auto p-0">
-      <div class="card">
+      <div class="card" [@lightsOnOff]="roomState">
         <div class="card-body">
           <h4 class="text-center mt-0 mb-2 ">Angular Todo List App</h4>
           <hr class="m-0">

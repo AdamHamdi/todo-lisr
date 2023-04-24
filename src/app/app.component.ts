@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { trigger, transition, style, animate,state, keyframes, group } from '@angular/animations';
 import { Guid } from 'guid-typescript';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import { Todo } from 'src/todo.model';
@@ -6,9 +7,25 @@ import { Todo } from 'src/todo.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations:[
+    trigger('lightsOnOff',[
+    state('off', style({
+      backgroundColor: 'black'
+    })),
+    state('on', style({
+      backgroundColor: 'white'
+    })),
+    transition('off =>on',[animate('0.1s')]),
+    transition('on =>off',[animate('0.1s')])
+  ])
+  ]
 })
 export class AppComponent {
+  //animation
+  roomState:string ='on'
+  
+  //todos
   todos: Todo[] = []
   task: string = '';
   taskCompleted: Todo[] = []
@@ -25,6 +42,7 @@ export class AppComponent {
     this.todos.push(TodoFirst);
     this.task = ''
   }
+
   markAsCompleted(id: Guid) {
     // let todo = this.todos.filter(todo => todo.id === id)[0];
   let todo =this.todos.find(todo =>todo.id===id);
@@ -46,7 +64,9 @@ export class AppComponent {
     }
 
   }
- 
+ toggleLight(){
+  this.roomState = (this.roomState =='off'?'on': 'off')
+ }
 
 }
 let array1: number[]=[1,2,3,4,5,6,7,8,9];
@@ -154,8 +174,8 @@ function arithmeticOperator(){
   let y = 150;
   let z = x+y;
   console.log(`the value of z est ${z}`)
-   let w = z - y;
-   console.log(`the value of w est ${w}`)
+   let w = z % y;
+   console.log(`the modulo (reste) of w est ${w}`)
 }
 arithmeticOperator()
 
