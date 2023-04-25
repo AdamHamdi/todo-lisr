@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { trigger, transition, style, animate,state, keyframes, group } from '@angular/animations';
 import { Guid } from 'guid-typescript';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
@@ -21,11 +21,12 @@ import { Todo } from 'src/todo.model';
   ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   //animation
   roomState:string ='on'
-  
+  counter :number=0
   //todos
+  @ViewChild('taskRef') taskElementRef!:ElementRef;
   todos: Todo[] = []
   task: string = '';
   taskCompleted: Todo[] = []
@@ -42,7 +43,9 @@ export class AppComponent {
     this.todos.push(TodoFirst);
     this.task = ''
   }
-
+ngAfterViewInit(): void {
+  this.taskElementRef.nativeElement.focus()
+}
   markAsCompleted(id: Guid) {
     // let todo = this.todos.filter(todo => todo.id === id)[0];
   let todo =this.todos.find(todo =>todo.id===id);
@@ -67,7 +70,9 @@ export class AppComponent {
  toggleLight(){
   this.roomState = (this.roomState =='off'?'on': 'off')
  }
-
+incrementCounter(){
+  this.counter += 1
+}
 }
 let array1: number[]=[1,2,3,4,5,6,7,8,9];
 let array2: string[]=['E','A','Z','F','T','S','Q','C','X'];

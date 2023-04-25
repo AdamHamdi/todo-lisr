@@ -1,6 +1,9 @@
  <div class="container">
   <div class="row m-0 w-100">
     <button class="btn btn-success" (click)="toggleLight()">light</button>
+
+    <button class="btn btn-success m-4" (click)="incrementCounter()">Increment</button>
+    <p>the button clicked {{counter}} times</p>
     <div class="col-6 mx-auto p-0">
       <div class="card" [@lightsOnOff]="roomState">
         <div class="card-body">
@@ -8,7 +11,7 @@
           <hr class="m-0">
           <div class="d-flex align-items-center justify-content-between mt-3">
             <div class="form-group mr-3 w-100">
-              <input type="text" class="form-control "  [(ngModel)]="task" required
+              <input #taskRef type="text" class="form-control "  [(ngModel)]="task" required
                 placeholder="Enter Task">
             </div>
             <button class=" btn-sm btn-primary d-flex
